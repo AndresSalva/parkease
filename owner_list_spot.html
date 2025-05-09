@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar mi Espacio - ParkEase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" id="logo"><img src="images/logo.png" alt="ParkEase Logo"></a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="driver_search.html">Buscar Parqueo</a></li>
+                    <li><a href="owner_list_spot.html" class="active">Listar Espacio</a></li>
+                    <li><a href="profile.html">Mi Perfil</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="list-spot-form-section">
+            <div data-animate class="fade-in-up" style="text-align: center; margin-bottom: 2em;">
+                <h2>Ofrece tu <span class="text-green">Espacio de Parqueo</span></h2>
+                <p class="text-medium">Comparte tu espacio y genera ingresos de forma sencilla y sostenible.</p>
+            </div>
+            
+            <form class="card" data-animate class="fade-in-up" style="transition-delay: 0.2s; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <h3 class="section-title" style="text-align:center; margin-bottom: 1.5em;">Detalles del Espacio</h3>
+                <div class="form-group">
+                    <label for="spot-name">Nombre del Parqueo</label>
+                    <input type="text" id="spot-name" name="spot-name" required placeholder="Ej: Garaje Verde, EcoLote Central">
+                </div>
+                <div class="form-group">
+                    <label for="spot-address">Dirección Completa</label>
+                    <input type="text" id="spot-address" name="spot-address" required placeholder="Ej: Calle Los Árboles 123">
+                </div>
+                <div class="form-group">
+                    <label for="spot-description">Descripción Breve</label>
+                    <textarea id="spot-description" name="spot-description" rows="3" required placeholder="Ej: Techado, seguro, cerca del parque..."></textarea>
+                </div>
+                
+                <h3 class="section-title" style="text-align:center; margin-top: 2em; margin-bottom: 1.5em;">Disponibilidad y Precios</h3>
+                <div class="form-group">
+                    <label for="spot-price">Precio por Hora (Bs)</label>
+                    <input type="number" id="spot-price" name="spot-price" min="1" step="0.50" required placeholder="Ej: 8.00">
+                </div>
+                 <div class="form-group">
+                    <label for="spot-type">Tipo de Espacio</label>
+                    <select id="spot-type" name="spot-type" required>
+                        <option value="" disabled selected>Selecciona un tipo...</option>
+                        <option value="cubierto">Cubierto</option>
+                        <option value="descubierto">Descubierto</option>
+                        <option value="privado_casa">Privado en Casa</option>
+                        <option value="comercial">Comercial / Lote</option>
+                    </select>
+                </div>
+
+                <h3 class="section-title" style="text-align:center; margin-top: 2em; margin-bottom: 1.5em;">Fotos del Espacio</h3>
+                 <div class="form-group">
+                    <label for="spot-photos">Sube fotos <small class="text-medium">(fachada, interior)</small></label>
+                    <input type="file" id="spot-photos" name="spot-photos" multiple accept="image/jpeg, image/png, image/webp">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg" style="width:100%; margin-top: 1.5em;"><i class="fas fa-paper-plane"></i> Publicar mi Espacio</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="currentYear"></span> ParkEase - Movilidad Urbana Consciente. Creado con <i class="fas fa-heart text-green"></i>.</p>
+            <p><a href="#">Términos y Condiciones</a> | <a href="#">Política de Privacidad</a></p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

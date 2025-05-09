@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Parqueo - ParkEase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" id="logo"><img src="images/logo.png" alt="ParkEase Logo"></a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="driver_search.html" class="active">Buscar Parqueo</a></li>
+                    <li><a href="owner_list_spot.html">Listar Espacio</a></li>
+                    <li><a href="profile.html">Mi Perfil</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="spot-details">
+            <div class="spot-details-grid">
+                <div class="spot-gallery" data-animate class="fade-in-up">
+                    <img src="images/parqueoCentro.jpg" alt="Foto Principal del Parqueo">
+                    <!-- 
+                    <div class="thumbnail-grid" style="margin-top:10px; display:flex; gap:10px;">
+                        <img src="images/parqueoCentro_thumb1.jpg" alt="Vista 1" style="width:100px; height:70px; object-fit:cover; border-radius: var(--border-radius-sm);">
+                        <img src="images/parqueoCentro_thumb2.jpg" alt="Vista 2" style="width:100px; height:70px; object-fit:cover; border-radius: var(--border-radius-sm);">
+                    </div>
+                     -->
+                </div>
+
+                <aside class="spot-info card" data-animate class="fade-in-up" style="transition-delay: 0.2s;">
+                    <h1>Parqueo "El Centro Ecológico"</h1>
+                    <p class="price">10 Bs<span>/hora</span></p>
+                    <p class="rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> 
+                        <span class="text-medium">(25 opiniones)</span>
+                    </p>
+                    
+                    <p><i class="fas fa-map-marker-alt text-green"></i> <strong>Dirección:</strong> Av. Heroínas #123, Cochabamba</p>
+                    <p><i class="far fa-clock text-green"></i> <strong>Horario:</strong> Lun-Sáb, 08:00 - 20:00</p>
+                    
+                    <h3 class="section-title">Descripción</h3>
+                    <p class="text-medium">Parqueo cubierto y seguro en el corazón verde de la ciudad. Acceso fácil, ideal para tus mandados céntricos.</p>
+
+                    <h3 class="section-title">Comodidades</h3>
+                    <ul class="amenities-list">
+                        <li><i class="fas fa-car"></i>Techado</li>
+                        <li><i class="fas fa-shield-alt"></i>Seguridad 24/7</li>
+                        <li><i class="fas fa-video"></i>Cámaras</li>
+                        <li><i class="fas fa-wheelchair"></i>Acceso Discapacitados</li>
+                        <li><i class="fas fa-charging-station"></i>Cargador EV</li>
+                    </ul>
+
+                    <h3 class="section-title">Selecciona Fecha y Hora</h3>
+                    <form action="reservation_confirm.html" method="GET">
+                        <div class="form-group">
+                            <label for="res-date">Fecha:</label>
+                            <input type="date" id="res-date" name="res-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-time-start">Hora de Llegada:</label>
+                            <input type="time" id="res-time-start" name="res-time-start" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-time-end">Hora de Salida (aprox):</label>
+                            <input type="time" id="res-time-end" name="res-time-end" required>
+                        </div>
+                        <button type="submit" class="btn btn-accent btn-lg"><i class="far fa-calendar-check"></i> Reservar Ahora</button>
+                    </form>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="currentYear"></span> ParkEase - Movilidad Urbana Consciente. Creado con <i class="fas fa-heart text-green"></i>.</p>
+            <p><a href="#">Términos y Condiciones</a> | <a href="#">Política de Privacidad</a></p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

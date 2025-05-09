@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Parqueo - ParkEase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" id="logo"><img src="images/logo.png" alt="ParkEase Logo"></a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="driver_search.html" class="active">Buscar Parqueo</a></li>
+                    <li><a href="owner_list_spot.html">Listar Espacio</a></li>
+                    <li><a href="profile.html">Mi Perfil</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="search-tool-section" class="container">
+            <div id="search-tool" data-animate class="fade-in">
+                <h2>Encuentra tu <span class="text-green">Espacio Ideal</span></h2>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Ingresa dirección, punto de interés..." aria-label="Campo de búsqueda de parqueo">
+                    </div>
+                    <div class="filters">
+                        <button type="button" class="btn btn-outline"><i class="fas fa-dollar-sign"></i> Precio</button>
+                        <button type="button" class="btn btn-outline"><i class="fas fa-route"></i> Distancia</button>
+                        <button type="button" class="btn btn-outline"><i class="far fa-star"></i> Valoración</button>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="results" class="container">
+            <div class="search-results-container">
+                <aside class="map-area" data-animate class="fade-in-up" style="transition-delay: 0.2s;">
+                    <img src="images/mapadeparqueos.jpg" alt="Mapa de Parqueos cercanos">
+                    <!-- Actual map integration would go here -->
+                </aside>
+                <div class="list-area" data-animate class="fade-in-up" style="transition-delay: 0.3s;">
+                    <h3>Parqueos Encontrados <span class="text-green">(3)</span></h3>
+                    
+                    <article class="card parking-spot" data-animate class="fade-in-up" style="transition-delay: 0.4s;">
+                        <img src="images/parqueoCentro.jpg" alt="Parqueo El Centro" class="spot-image">
+                        <div class="card-content">
+                            <span class="price-tag">10 Bs/h</span>
+                            <h4>Parqueo "El Centro"</h4>
+                            <p><i class="fas fa-map-marker-alt text-green"></i> Av. Heroínas #123</p>
+                            <p><i class="fas fa-walking text-green"></i> 500m</p>
+                            <p class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> (25)
+                            </p>
+                            <a href="spot_details.html?id=1" class="btn btn-secondary btn-sm">Ver y Reservar</a>
+                        </div>
+                    </article>
+
+                    <article class="card parking-spot" data-animate class="fade-in-up" style="transition-delay: 0.5s;">
+                        <img src="images/parqueoSeguro.jpg" alt="Garaje Seguro Total" class="spot-image">
+                         <div class="card-content">
+                            <span class="price-tag">8 Bs/h</span>
+                            <h4>Garaje "Seguro Total"</h4>
+                            <p><i class="fas fa-map-marker-alt text-green"></i> Calle Jordán #456</p>
+                            <p><i class="fas fa-walking text-green"></i> 1.2km</p>
+                            <p><i class="fas fa-cloud-sun text-green"></i> Techado</p>
+                            <p class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (40)
+                            </p>
+                            <a href="spot_details.html?id=2" class="btn btn-secondary btn-sm">Ver y Reservar</a>
+                        </div>
+                    </article>
+
+                     <article class="card parking-spot" data-animate class="fade-in-up" style="transition-delay: 0.6s;">
+                        <img src="images/LoteSoleado.jpg" alt="Lote Soleado" class="spot-image">
+                        <div class="card-content">
+                            <span class="price-tag">5 Bs/h</span>
+                            <h4>Lote "Soleado"</h4>
+                            <p><i class="fas fa-map-marker-alt text-green"></i> Esq. Ayacucho y Junín</p>
+                            <p><i class="fas fa-walking text-green"></i> 800m</p>
+                            <p><i class="fas fa-sun text-green"></i> Descubierto</p>
+                            <p class="rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i> (10)
+                            </p>
+                            <a href="spot_details.html?id=3" class="btn btn-secondary btn-sm">Ver y Reservar</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="currentYear"></span> ParkEase - Movilidad Urbana Consciente. Creado con <i class="fas fa-heart text-green"></i>.</p>
+            <p><a href="#">Términos y Condiciones</a> | <a href="#">Política de Privacidad</a></p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkEase - Estacionamiento Fácil y Consciente</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" id="logo"><img src="images/logo.png" alt="ParkEase Logo"></a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="driver_search.html">Buscar Parqueo</a></li>
+                    <li><a href="owner_list_spot.html">Listar Espacio</a></li>
+                    <li><a href="profile.html">Mi Perfil</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" data-animate class="fade-in">
+            <div class="container">
+                <h1>Estaciona <span class="text-green">Inteligentemente</span>, Vive <span class="text-green">Sostenible</span></h1>
+                <p class="text-medium">ParkEase te ayuda a encontrar parqueos disponibles de forma sencilla y contribuye a una ciudad más verde.</p>
+                <div class="cta-buttons" data-animate class="fade-in-up" style="transition-delay: 0.2s;">
+                    <a href="driver_search.html" class="btn btn-primary btn-lg">Encontrar Parqueo <i class="fas fa-map-marked-alt"></i></a>
+                    <a href="owner_list_spot.html" class="btn btn-secondary btn-lg">Ofrecer mi Espacio <i class="fas fa-leaf"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="container">
+            <h2 data-animate class="fade-in-up" style="text-align: center;">¿Por Qué <span class="text-green">ParkEase</span>?</h2>
+            <div class="features-grid">
+                <div class="feature-item card" data-animate class="fade-in-up" style="transition-delay: 0.1s;">
+                    <div class="icon"><i class="fas fa-hourglass-half"></i></div>
+                    <h3>Ahorra Tiempo</h3>
+                    <p class="text-medium">Encuentra lugares cerca de tu destino rápidamente, sin estrés.</p>
+                </div>
+                <div class="feature-item card" data-animate class="fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Opción Consciente</h3>
+                    <p class="text-medium">Optimiza el uso de espacios y reduce la congestión vehicular.</p>
+                </div>
+                <div class="feature-item card" data-animate class="fade-in-up" style="transition-delay: 0.3s;">
+                    <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Simple y Práctico</h3>
+                    <p class="text-medium">Reserva y paga desde tu celular con nuestra app intuitiva.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="container">
+            <h2 data-animate class="fade-in-up" style="text-align: center;">Cómo <span class="text-green">Funciona</span></h2>
+            <div class="steps-container card" data-animate class="fade-in" style="transition-delay: 0.2s;">
+                <ol>
+                    <li data-animate class="fade-in-up" style="transition-delay: 0.3s;"><strong>Busca:</strong> Ingresa tu destino y explora opciones cercanas.</li>
+                    <li data-animate class="fade-in-up" style="transition-delay: 0.4s;"><strong>Reserva:</strong> Elige tu parqueo ideal y asegura tu lugar.</li>
+                    <li data-animate class="fade-in-up" style="transition-delay: 0.5s;"><strong>Paga Seguro:</strong> Realiza el pago digitalmente de forma fácil.</li>
+                    <li data-animate class="fade-in-up" style="transition-delay: 0.6s;"><strong>Estaciona:</strong> Llega y estaciona sin complicaciones. ¡Disfruta!</li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="currentYear"></span> ParkEase - Movilidad Urbana Consciente. Creado con <i class="fas fa-heart text-green"></i>.</p>
+            <p><a href="#">Términos y Condiciones</a> | <a href="#">Política de Privacidad</a></p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

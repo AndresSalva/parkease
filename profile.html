@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - ParkEase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" id="logo"><img src="images/logo.png" alt="ParkEase Logo"></a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="driver_search.html">Buscar Parqueo</a></li>
+                    <li><a href="owner_list_spot.html">Listar Espacio</a></li>
+                    <li><a href="profile.html" class="active">Mi Perfil</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="user-profile">
+            <h2 data-animate class="fade-in-up" style="text-align: center; margin-bottom: 1.5em;">Mi <span class="text-green">Panel Personal</span></h2>
+            <div class="profile-grid">
+                <aside class="profile-sidebar" data-animate class="fade-in-up" style="transition-delay: 0.1s;">
+                    <div class="card">
+                        <img src="images/avatar.png" alt="Avatar del Usuario" class="avatar">
+                        <h3>Andres Eduardo S.</h3>
+                        <p class="text-medium">andres.salvatierra@example.com</p>
+                        <a href="#" class="btn btn-primary"><i class="fas fa-user-edit"></i> Editar Perfil</a>
+                        <a href="#" class="btn btn-secondary" style="margin-top: 10px;"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                    </div>
+                </aside>
+
+                <div class="profile-content" data-animate class="fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="card" data-animate class="fade-in-up" style="transition-delay: 0.3s;">
+                        <h3><i class="far fa-calendar-check text-green"></i> Mis Reservas Activas</h3>
+                        <div class="reservation-item">
+                            <div class="item-details">
+                                <h4>Parqueo "El Centro"</h4>
+                                <p><i class="far fa-calendar-alt"></i> 2024-08-15 | <i class="far fa-clock"></i> 14:00 - 17:00</p>
+                                <p><i class="fas fa-check-circle text-green"></i> Estado: Confirmada</p>
+                            </div>
+                            <div class="item-actions">
+                                <a href="spot_details.html?id=1" class="btn btn-sm btn-secondary"><i class="far fa-eye"></i> Ver</a>
+                                <a href="#" class="btn btn-sm btn-outline"><i class="far fa-times-circle"></i> Cancelar</a>
+                            </div>
+                        </div>
+                        <div class="reservation-item">
+                            <div class="item-details">
+                                <h4>Garaje "Seguro Total"</h4>
+                                <p><i class="far fa-calendar-alt"></i> 2024-08-20 | <i class="far fa-clock"></i> 09:00 - 12:00</p>
+                                <p><i class="fas fa-check-circle text-green"></i> Estado: Confirmada</p>
+                            </div>
+                             <div class="item-actions">
+                                <a href="spot_details.html?id=2" class="btn btn-sm btn-secondary"><i class="far fa-eye"></i> Ver</a>
+                                <a href="#" class="btn btn-sm btn-outline"><i class="far fa-times-circle"></i> Cancelar</a>
+                             </div>
+                        </div>
+                        <p class="no-items" style="display:none; margin-top:1em;">No tienes reservas activas.</p>
+                    </div>
+
+                    <div class="card" data-animate class="fade-in-up" style="transition-delay: 0.4s;">
+                        <h3><i class="fas fa-parking text-green"></i> Mis Espacios Listados</h3>
+                        <div class="listing-item">
+                            <div class="item-details">
+                                <h4>Mi Garaje Verde</h4>
+                                <p><i class="fas fa-map-marker-alt"></i> Calle Falsa 123</p>
+                                <p><i class="fas fa-power-off text-green"></i> Estado: Activo | <i class="fas fa-tag"></i> Precio: 7 Bs/hora</p>
+                            </div>
+                            <div class="item-actions">
+                                <a href="#" class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i> Editar</a>
+                                <a href="#" class="btn btn-sm btn-outline"><i class="fas fa-chart-bar"></i> Ver Stats</a>
+                            </div>
+                        </div>
+                         <p class="no-items" style="display:none; margin-top:1em;">Aún no has listado ningún espacio.</p>
+                          <a href="owner_list_spot.html" class="btn btn-accent" style="margin-top: 20px; width: 100%;"><i class="fas fa-plus-circle"></i> Listar Nuevo Espacio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="currentYear"></span> ParkEase - Movilidad Urbana Consciente. Creado con <i class="fas fa-heart text-green"></i>.</p>
+            <p><a href="#">Términos y Condiciones</a> | <a href="#">Política de Privacidad</a></p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

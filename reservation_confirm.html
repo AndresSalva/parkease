@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva Confirmada - ParkEase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" id="logo"><img src="images/logo.png" alt="ParkEase Logo"></a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="driver_search.html" class="active">Buscar Parqueo</a></li>
+                    <li><a href="owner_list_spot.html">Listar Espacio</a></li>
+                    <li><a href="profile.html">Mi Perfil</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="confirmation" data-animate class="scale-up">
+            <div class="confirmation-box card">
+                <div class="icon"><i class="fas fa-check-circle"></i></div>
+                <h2>¡Reserva <span class="text-green">Exitosa!</span></h2>
+                <p>Tu espacio en <strong>Parqueo "El Centro Ecológico"</strong> ha sido reservado.</p>
+                <p><strong><i class="far fa-calendar-alt text-green"></i> Fecha:</strong> <span id="conf-date">[Fecha]</span></p>
+                <p><strong><i class="far fa-clock text-green"></i> Hora:</strong> <span id="conf-time">[Hora]</span></p>
+                <p class="text-medium" style="font-size: 0.9rem;">Recibirás un email con los detalles y tu código de ingreso. ¡Gracias por elegir ParkEase!</p>
+                <br>
+                <a href="driver_search.html" class="btn btn-primary"><i class="fas fa-search"></i> Buscar Otro</a>
+                <a href="profile.html" class="btn btn-secondary" style="margin-left:10px;"><i class="far fa-user"></i> Mis Reservas</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="currentYear"></span> ParkEase - Movilidad Urbana Consciente. Creado con <i class="fas fa-heart text-green"></i>.</p>
+            <p><a href="#">Términos y Condiciones</a> | <a href="#">Política de Privacidad</a></p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const confDateEl = document.getElementById('conf-date');
+            const confTimeEl = document.getElementById('conf-time');
+
+            if (confDateEl && params.get('res-date')) {
+                try {
+                    const dateValue = params.get('res-date');
+                     // Basic check for YYYY-MM-DD format. A robust solution would use a date library.
+                    if (/^\d{4}-\d{2}-\d{2}$/.test(dateValue)) {
+                         const date = new Date(dateValue + 'T00:00:00'); // Ensure correct parsing in local time
+                         confDateEl.textContent = date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+                    } else {
+                        confDateEl.textContent = dateValue; // fallback for unexpected formats
+                    }
+                } catch (e) {
+                    console.error("Error parsing date:", e);
+                    confDateEl.textContent = params.get('res-date'); 
+                }
+            } else if(confDateEl) {
+                confDateEl.textContent = "No especificada";
+            }
+
+            if (confTimeEl && params.get('res-time-start')) {
+                confTimeEl.textContent = params.get('res-time-start') + (params.get('res-time-end') ? " - " + params.get('res-time-end') : '');
+            } else if (confTimeEl) {
+                 confTimeEl.textContent = "No especificada";
+            }
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
